@@ -3,91 +3,79 @@
 <head>
     <title>About Me</title>
     <style>
-        body { 
-            background-color: #ffe6f0; 
-            font-family: Arial; 
-            text-align: center; 
-            padding: 20px; 
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
         }
 
-        h1 { 
-            color: #cc0066; 
+        /* Navbar */
+        .navbar {
+            background-color: #cc0066;
+            padding: 15px;
         }
 
-        img { 
-            width: 200px; 
-            border-radius: 50%; 
-            margin-top: 20px; 
+        .navbar a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
         }
 
-        p { 
-            color: #333; 
-            max-width: 500px; 
-            margin: 20px auto; 
+        .navbar a:hover {
+            color: #ffccdd;
         }
 
-        nav { 
-            background-color:#cc0066; 
-            padding: 10px; 
-            text-align:center; 
-            margin-bottom: 20px;
+        .container {
+            padding: 20px;
         }
 
-        nav a { 
-            color:white; 
-            margin: 10px; 
-            text-decoration:none; 
-            font-weight:bold; 
-            transition: 0.3s;
+        h1 {
+            color: #cc0066;
         }
 
-        nav a:hover { 
-            color: #ffccdd; 
-            transform: scale(1.05);
+        p {
+            color: #333;
         }
 
-        .button {
+        .buttons a {
             display: inline-block;
             margin: 10px;
-            padding: 10px 20px;
-            background-color: #cc0066;
             color: white;
+            background-color: #cc0066;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 10px;
+            font-size: 16px;
             transition: 0.3s;
-            font-weight: bold;
         }
 
-        .button:hover {
+        .buttons a:hover {
             background-color: #ff3399;
-            transform: scale(1.05);
         }
-
     </style>
 </head>
-
 <body>
 
-<nav>
+<div class="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
-</nav>
+</div>
 
-<h1>About Me 🌸</h1>  
+<div class="container">
+    <h1>About Me 🌸</h1>
+    <p>Hello! I'm Hanane. Welcome to my portfolio. I love web development and learning new things in HTML, CSS, and JavaScript.</p>
 
-<!-- 🔥 الصورة هنا -->
-<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="My Photo">  
-
-<p>
-Hi! I am Hanane, a computer science student and beginner web developer 💻  
-I am learning HTML, CSS, and JavaScript, and I enjoy building simple and creative websites.  
-My goal is to become a professional web developer 🚀
-</p>
-
-<a class="button" href="projects.html">See My Projects →</a>
-<a class="button" href="contact.html">Contact Me →</a>
+    <div class="buttons">
+        <a href="contact.html">My Contact →</a>
+        <a href="projects.html">My Projects →</a> <!-- هنا صححت s -->
+    </div>
+</div>
 
 </body>
 </html>
