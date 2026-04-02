@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Stylish Profile</title>
+
+    <!-- 🔥 Favicon -->
+    <link rel="icon" href="https://via.placeholder.com/32/cc0066/ffffff?text=N.M" type="image/png">
+
+    <style>
+        body {
+            background-color: #cceeff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #cc0066;
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            color: #ffccdd;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 { color: #cc0066; }
+        p { color: #333; }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: white;
+            margin: 10px auto;
+            padding: 10px;
+            width: 200px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        li:hover {
+            background-color: #ffccdd;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 20px;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        a.button, button {
+            display: inline-block;
+            margin-top: 20px;
+            color: white;
+            background-color: #cc0066;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        a.button:hover, button:hover {
+            background-color: #ff3399;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<div class="container">
+
+    <h1>Hello, I'm Hanane 🌸</h1>
+    <p id="myText">Welcome to my portfolio website! 🌸</p>
+
+    <h2>My Skills</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript (beginner)</li>
+    </ul>
+
+    <h2>My Photo</h2>
+    <!-- 🔥 الصورة الكبيرة الجديدة -->
+    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="My Photo">
+
+    <p>Visit my favorite website:</p>
+    <a class="button" href="https://www.google.com" target="_blank">Go to Google</a>
+
+    <br><br>
+    <a class="button" href="about.html">About Me →</a>
+
+    <br><br>
+    <button onclick="goToProjects()">My Projects →</button>
+
+</div>
+
+<script>
+    function changeText() {
+        document.getElementById("myText").innerHTML = "Now you are exploring JavaScript! 🚀";
+    }
+
+    function goToProjects() {
+        window.location.href = "projects.html";
+    }
+</script>
+
+</body>
+</html>

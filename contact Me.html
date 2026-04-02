@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cceeff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #cc0066;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffccdd;
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #cc0066;
+            margin-top: 20px;
+        }
+
+        p {
+            color: #333;
+            font-size: 18px;
+        }
+
+        /* Contact Buttons */
+        .contact-buttons {
+            margin-top: 30px;
+        }
+
+        .contact-buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            color: white;
+        }
+
+        .email { background-color: #ff6699; }
+        .github { background-color: #333; }
+        .linkedin { background-color: #0077b5; }
+        .phone { background-color: #ff9933; }
+
+        .contact-buttons a:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .contact-buttons a {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Contact Me 📬</h1>
+    <p>Feel free to reach out through any of the following ways:</p>
+
+    <div class="contact-buttons">
+        <!-- Email -->
+        <a class="email" href="mailto:mynounou2004@gmail.com">📧 Email Me</a>
+        <!-- GitHub -->
+        <a class="github" href="https://github.com/NoouurM" target="_blank">💻 GitHub</a>
+        <!-- LinkedIn -->
+        <a class="linkedin" href="https://www.linkedin.com/in/mechri-nour-b480a43bb" target="_blank">💼 LinkedIn</a>
+        <!-- Phone -->
+        <a class="phone" href="tel:+213675423848">📱 Call Me</a>
+    </div>
+
+</body>
+</html>
