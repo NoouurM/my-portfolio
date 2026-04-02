@@ -3,7 +3,6 @@
 <head>
     <title>My Stylish Profile</title>
 
-    <!-- 🔥 Favicon -->
     <link rel="icon" href="https://via.placeholder.com/32/cc0066/ffffff?text=N.M" type="image/png">
 
     <style>
@@ -50,7 +49,6 @@
             padding: 10px;
             width: 200px;
             border-radius: 10px;
-            transition: 0.3s;
         }
 
         li:hover {
@@ -61,11 +59,6 @@
             width: 300px;
             border-radius: 20px;
             margin-top: 20px;
-            transition: transform 0.3s;
-        }
-
-        img:hover {
-            transform: scale(1.05);
         }
 
         a.button, button {
@@ -78,13 +71,11 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: 0.3s;
             font-size: 16px;
         }
 
         a.button:hover, button:hover {
             background-color: #ff3399;
-            transform: scale(1.05);
         }
     </style>
 </head>
@@ -94,14 +85,14 @@
 <div class="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
+    <a href="project.html">Projects</a>
     <a href="contact.html">Contact</a>
 </div>
 
 <div class="container">
 
     <h1>Hello, I'm Hanane 🌸</h1>
-    <p id="myText">Welcome to my portfolio website! 🌸</p>
+    <p>Welcome to my portfolio website! 🌸</p>
 
     <h2>My Skills</h2>
     <ul>
@@ -110,29 +101,22 @@
         <li>JavaScript (beginner)</li>
     </ul>
 
-    <h2>My Photo</h2>
-    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="My Photo">
+    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg">
 
-    <p>Visit my favorite website:</p>
-    <a class="button" href="https://www.google.com" target="_blank">Go to Google</a>
+    <br>
 
-    <br><br>
     <a class="button" href="about.html">About Me →</a>
 
-    <br><br>
-    <button onclick="goToProjects()">My Projects →</button>
+    <br>
+
+    <a class="button" href="project.html">My Projects →</a>
+
+    <br>
+
+    <!-- 🔥 هذا هو الزر الجديد -->
+    <a class="button" href="contact.html">Contact Me →</a>
 
 </div>
-
-<script>
-    function changeText() {
-        document.getElementById("myText").innerHTML = "Now you are exploring JavaScript! 🚀";
-    }
-
-    function goToProjects() {
-        window.location.href = "projects.html";
-    }
-</script>
 
 </body>
 </html>
