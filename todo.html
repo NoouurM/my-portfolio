@@ -1,0 +1,364 @@
+[02/04/2026 21:52] Nouuuur: هنا todo.html كامل 👇
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            min-height: 100vh;
+            color: white;
+        }
+
+        nav {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f0c0ff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Input Area */
+        .input-area {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .input-area input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+            outline: none;
+        }
+
+        .input-area input::placeholder {
+            color: #ccc;
+        }
+
+        .color-picker {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .color-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .color-btn.selected {
+            border-color: white;
+            transform: scale(1.2);
+        }
+
+        .add-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #ff6b6b, #ff9ff3);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            opacity: 0.85;
+            transform: scale(1.02);
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 20px;
+            border-radius: 12px;
+        }
+
+        .stat-box span {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .stat-box p {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        /* Tasks */
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            border-left: 5px solid #fff;
+            transition: 0.3s;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+[02/04/2026 21:52] Nouuuur: .task-item.done .task-text {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .task-checkbox {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            accent-color: #ff9ff3;
+        }
+
+        .task-text {
+            flex: 1;
+            font-size: 15px;
+        }
+
+        .delete-btn {
+            background: rgba(255, 107, 107, 0.3);
+            border: none;
+            color: #ff6b6b;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .delete-btn:hover {
+            background: rgba(255, 107, 107, 0.6);
+        }
+
+        .empty-msg {
+            text-align: center;
+            color: #aaa;
+            font-size: 15px;
+            padding: 30px;
+        }
+
+        /* Clear All */
+        .clear-btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(255,107,107,0.2);
+            color: #ff6b6b;
+            border: 1px solid #ff6b6b;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .clear-btn:hover {
+            background: rgba(255,107,107,0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>✨ My To-Do List</h1>
+
+        <!-- Input -->
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="Add a new task..." />
+            <div class="color-picker" id="colorPicker"></div>
+            <button class="add-btn" onclick="addTask()">➕ Add Task</button>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-box">
+                <span id="totalCount">0</span>
+                <p>Total</p>
+            </div>
+            <div class="stat-box">
+                <span id="doneCount">0</span>
+                <p>Done ✅</p>
+            </div>
+            <div class="stat-box">
+                <span id="leftCount">0</span>
+                <p>Remaining</p>
+            </div>
+        </div>
+
+        <!-- Tasks -->
+        <div class="task-list" id="taskList"></div>
+
+        <button class="clear-btn" onclick="clearAll()">🗑️ Clear All Tasks</button>
+    </div>
+
+    <script>
+        const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3', '#1dd1a1'];
+        let selectedColor = colors[0];
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        // Build color picker
+        const picker = document.getElementById('colorPicker');
+        colors.forEach(color => {
+            const btn = document.createElement('div');
+            btn.className = 'color-btn' + (color === selectedColor ? ' selected' : '');
+            btn.style.background = color;
+            btn.onclick = () => {
+                selectedColor = color;
+                document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            };
+            picker.appendChild(btn);
+        });
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function updateStats() {
+            const done = tasks.filter(t => t.done).length;
+            document.getElementById('totalCount').textContent = tasks.length;
+            document.getElementById('doneCount').textContent = done;
+            document.getElementById('leftCount').textContent = tasks.length - done;
+        }
+
+        function renderTasks() {
+            const list = document.getElementById('taskList');
+            list.innerHTML = '';
+[02/04/2026 21:52] Nouuuur: if (tasks.length === 0) {
+                list.innerHTML = '<p class="empty-msg">No tasks yet! Add one above 🎯</p>';
+                updateStats();
+                return;
+            }
+
+            tasks.forEach((task, index) => {
+                const item = document.createElement('div');
+                item.className = 'task-item' + (task.done ? ' done' : '');
+                item.style.borderLeftColor = task.color;
+
+                item.innerHTML = 
+                    <input type="checkbox" class="task-checkbox" ${task.done ? 'checked' : ''} onchange="toggleTask(${index})">
+                    <span class="task-text">${task.text}</span>
+                    <button class="delete-btn" onclick="deleteTask(${index})">🗑️</button>
+                ;
+                list.appendChild(item);
+            });
+
+            updateStats();
+        }
+
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            tasks.push({ text, color: selectedColor, done: false });
+            input.value = '';
+            saveTasks();
+            renderTasks();
+        }
+
+        function toggleTask(index) {
+            tasks[index].done = !tasks[index].done;
+            saveTasks();
+            renderTasks();
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            saveTasks();
+            renderTasks();
+        }
+
+        function clearAll() {
+            if (tasks.length === 0) return;
+            if (confirm('Delete all tasks?')) {
+                tasks = [];
+                saveTasks();
+                renderTasks();
+            }
+        }
+
+        // Add on Enter key
+        document.getElementById('taskInput').addEventListener('keypress', e => {
+            if (e.key === 'Enter') addTask();
+        });
+
+        renderTasks();
+    </script>
+
+</body>
+</html>

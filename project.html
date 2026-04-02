@@ -1,112 +1,210 @@
-<!DOCTYPE html>
-<html>
+[02/04/2026 22:17] Nouuuur: <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>My Projects</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+        * {
             margin: 0;
             padding: 0;
-            text-align: center;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f0f1a;
+            color: white;
+            min-height: 100vh;
         }
 
         nav {
-            background-color: #cc0066;
-            padding: 15px;
-            text-align: center;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
+        .logo {
+            font-size: 22px;
             font-weight: bold;
-            font-size: 18px;
+            background: linear-gradient(to right, #9b30ff, #cc66ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        nav a:hover {
-            color: #ffccdd;
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: 0.3s;
         }
 
-        h1 {
-            margin: 20px 0;
-            color: #cc0066;
+        .nav-links a:hover {
+            color: #9b30ff;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 30px;
+            background: radial-gradient(ellipse at center, #1a0033 0%, #0f0f1a 70%);
+        }
+
+        header h1 {
+            font-size: 36px;
+            background: linear-gradient(to right, #cc66ff, #9b30ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            gap: 25px;
         }
 
         .project-card {
-            display: inline-block;
-            width: 250px;
-            background-color: #fff;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px gray;
-        }
-
-        .project-card:hover {
-            transform: scale(1.05);
+            background: #1a1a2e;
+            width: 280px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(155,48,255,0.2);
+            box-shadow: 0 0 20px rgba(155,48,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .project-card img {
             width: 100%;
-            border-radius: 10px;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
         }
 
-        .project-card h3 {
-            margin: 10px 0 5px;
-            color: #cc0066;
+        .project-info {
+            padding: 18px;
         }
 
-        .project-card p {
-            color: #333;
-            font-size: 14px;
+        .project-info h3 {
+            font-size: 18px;
+            color: #cc66ff;
+            margin-bottom: 8px;
         }
 
-        .project-card a {
+        .project-info p {
+            font-size: 13px;
+            color: #999;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-info a {
             display: inline-block;
-            margin-top: 10px;
+            padding: 9px 18px;
+            background: linear-gradient(to right, #6a0dad, #9b30ff);
             color: white;
-            background-color: #cc0066;
-            padding: 8px 15px;
-            border-radius: 8px;
             text-decoration: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .project-card a:hover {
-            background-color: #ff3399;
+        .project-info a:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(155,48,255,0.25);
+            border-color: rgba(155,48,255,0.5);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #333;
+            font-size: 13px;
+            border-top: 1px solid #111;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .project-card { width: 90%; }
+            .nav-links a { margin-left: 12px; font-size: 14px; }
         }
     </style>
 </head>
-
 <body>
+[02/04/2026 22:17] Nouuuur: <nav>
+        <div class="logo">Nour.dev</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="project.html">Projects</a>
-    <a href="contact.html">Contact</a>
-</nav>
+    <header>
+        <h1>My Projects 🚀</h1>
+        <p>Here are some of my latest coding experiments!</p>
+    </header>
 
-<h1>My Projects 🚀</h1>
+    <div class="projects-container">
 
-<div class="project-card">
-    <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg">
-    <h3>Project 1</h3>
-    <p>Website for beginners in HTML & CSS</p>
-</div>
+        <!-- Project 1 -->
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?fit=crop&w=400&h=200" alt="Project 1">
+            <div class="project-info">
+                <h3>Project 1</h3>
+                <p>Website for beginners in HTML & CSS</p>
+                <a href="#">View Project →</a>
+            </div>
+        </div>
 
-<div class="project-card">
-    <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg">
-    <h3>Project 2</h3>
-    <p>Interactive JavaScript Website</p>
-</div>
+        <!-- Project 2 -->
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?fit=crop&w=400&h=200" alt="Project 2">
+            <div class="project-info">
+                <h3>Project 2</h3>
+                <p>Interactive JavaScript Website</p>
+                <a href="#">View Project →</a>
+            </div>
+        </div>
 
-<div class="project-card">
-    <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg">
-    <h3>Project 3</h3>
-    <p>Simple Web Design Project</p>
-</div>
+        <!-- To-Do List -->
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?fit=crop&w=400&h=200" alt="To-Do List">
+            <div class="project-info">
+                <h3>To-Do List App 📝</h3>
+                <p>Interactive To-Do List built with HTML, CSS, and JavaScript. Add, delete, and mark tasks!</p>
+                <a href="todo.html">View Project →</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>Made with 💜 by Nour</footer>
 
 </body>
 </html>
