@@ -3,6 +3,7 @@
 <head>
     <title>My Stylish Profile</title>
 
+    <!-- Favicon -->
     <link rel="icon" href="https://via.placeholder.com/32/cc0066/ffffff?text=N.M" type="image/png">
 
     <style>
@@ -92,7 +93,7 @@
 <div class="container">
 
     <h1>Hello, I'm Hanane 🌸</h1>
-    <p>Welcome to my portfolio website! 🌸</p>
+    <p id="myText">Welcome to my portfolio website! 🌸</p>
 
     <h2>My Skills</h2>
     <ul>
@@ -101,7 +102,8 @@
         <li>JavaScript (beginner)</li>
     </ul>
 
-    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg">
+    <h2>My Photo</h2>
+    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="My Photo">
 
     <br>
 
@@ -109,14 +111,24 @@
 
     <br>
 
-    <a class="button" href="project.html">My Projects →</a>
+    <button onclick="goToProjects()">My Projects →</button>
 
     <br>
 
-    <!-- 🔥 هذا هو الزر الجديد -->
     <a class="button" href="contact.html">Contact Me →</a>
 
 </div>
+
+<script>
+    function changeText() {
+        document.getElementById("myText").innerHTML = "Now you are exploring JavaScript! 🚀";
+    }
+
+    function goToProjects() {
+        // ✅ هنا صلحت الرابط باش يفتح ملف project.html
+        window.location.href = "project.html";
+    }
+</script>
 
 </body>
 </html>
