@@ -1,4 +1,4 @@
-[03/04/2026 13:56] Nouuuur: <!DOCTYPE html>
+[03/04/2026 16:05] Nouuuur: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,6 +53,52 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Formspree Form Styles */
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+            outline: none;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #ccc;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #ff6b6b, #ff9ff3);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            opacity: 0.85;
+            transform: scale(1.02);
+        }
+
+        /* Todo App Styles */
         .input-area {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
@@ -116,7 +162,8 @@
             transform: scale(1.02);
         }
 
-        .stats {
+        .
+[03/04/2026 16:05] Nouuuur: stats {
             display: flex;
             justify-content: space-around;
             margin-bottom: 20px;
@@ -167,7 +214,8 @@
             text-decoration: line-through;
             opacity: 0.5;
         }
-[03/04/2026 13:56] Nouuuur: .task-checkbox {
+
+        .task-checkbox {
             width: 22px;
             height: 22px;
             cursor: pointer;
@@ -231,6 +279,16 @@
     <div class="container">
         <h1>✨ My To-Do List</h1>
 
+        <!-- Formspree Contact Form -->
+        <div class="contact-form">
+            <form action="https://formspree.io/f/YOURENDPOINT" method="POST">
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Todo App Input Area -->
         <div class="input-area">
             <input type="text" id="taskInput" placeholder="Add a new task..." />
             <div class="color-picker" id="colorPicker"></div>
@@ -258,7 +316,7 @@
     </div>
 
     <script>
-        const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3', '#1dd1a1'];
+[03/04/2026 16:05] Nouuuur: const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3', '#1dd1a1'];
         let selectedColor = colors[0];
         let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
@@ -299,8 +357,7 @@
             tasks.forEach((task, index) => {
                 const item = document.createElement('div');
                 item.className = 'task-item' + (task.done ? ' done' : '');
-                item.
-[03/04/2026 13:56] Nouuuur: style.borderLeftColor = task.color;
+                item.style.borderLeftColor = task.color;
                 item.innerHTML = `
                     <input type="checkbox" class="task-checkbox" ${task.done ? 'checked' : ''} onchange="toggleTask(${index})">
                     <span class="task-text">${task.text}</span>
