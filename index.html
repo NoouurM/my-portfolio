@@ -1,132 +1,73 @@
-<!DOCTYPE html>
+[03/04/2026 14:13] Nouuuur: <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-
-<!-- حل مشكل GitHub Pages -->
-<base href="/my-portfolio/">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nour | Portfolio</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family: 'Segoe UI', sans-serif;
-    background:#0a0f1e;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 50px;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    position:sticky;
-    top:0;
-}
-.logo{
-    font-weight:bold;
-    font-size:20px;
-    background:linear-gradient(to right,#ff69b4,#cc0066);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-.nav-links a{
-    margin-left:20px;
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
-}
-.nav-links a:hover{
-    color:#ff69b4;
-}
-
-/* HERO */
-.hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    animation:fadeIn 1.5s ease;
-}
-.hero h1{
-    font-size:50px;
-    background:linear-gradient(to right,#fff,#ff69b4);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-.hero p{
-    color:#aaa;
-    margin:15px 0 30px;
-}
-
-/* BUTTONS */
-.buttons a{
-    padding:14px 30px;
-    margin:10px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
-}
-.primary{
-    background:linear-gradient(to right,#ff69b4,#cc0066);
-    color:white;
-}
-.secondary{
-    border:1px solid white;
-    color:white;
-}
-.primary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 20px rgba(255,105,180,0.4);
-}
-.secondary:hover{
-    color:#ff69b4;
-    border-color:#ff69b4;
-}
-
-/* ANIMATION */
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(30px)}
-    to{opacity:1;transform:translateY(0)}
-}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-    nav{padding:15px}
-    .hero h1{font-size:30px}
-}
-</style>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #0a0f1e; color: white; min-height: 100vh; }
+        nav { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 22px; font-weight: bold; background: linear-gradient(to right, #ff69b4, #cc0066); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 25px; font-size: 16px; transition: 0.3s; }
+        .nav-links a:hover { color: #ff69b4; }
+        .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px 20px; background: radial-gradient(ellipse at center, #1a0010 0%, #0a0f1e 70%); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,105,180,0.15) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; }
+        .hero-badge { background: rgba(255,105,180,0.15); border: 1px solid rgba(255,105,180,0.3); color: #ff69b4; padding: 6px 18px; border-radius: 20px; font-size: 13px; margin-bottom: 20px; letter-spacing: 2px; }
+        .hero h1 { font-size: 52px; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(to right, #ffffff, #ff69b4, #cc0066); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 18px; color: #aaa; max-width: 500px; line-height: 1.7; margin-bottom: 35px; }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .btn-primary { padding: 14px 30px; background: linear-gradient(to right, #ff69b4, #cc0066); color: white; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 15px; transition: 0.3s; }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,105,180,0.4); }
+        .btn-secondary { padding: 14px 30px; background: transparent; color: white; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 15px; border: 1px solid rgba(255,255,255,0.2); transition: 0.3s; }
+        .btn-secondary:hover { border-color: #ff69b4; color: #ff69b4; }
+        .stats { display: flex; justify-content: center; gap: 40px; padding: 40px 20px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat span { display: block; font-size: 32px; font-weight: bold; color: #ff69b4; }
+        .stat p { font-size: 13px; color: #666; margin-top: 4px; }
+        .skills-section { padding: 60px 20px; text-align: center; }
+        .skills-section h2 { font-size: 26px; margin-bottom: 30px; color: #ff69b4; }
+        .skills-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; max-width: 600px; margin: 0 auto; }
+        .skill-tag { background: rgba(255,105,180,0.1); border: 1px solid rgba(255,105,180,0.2); color: #ff69b4; padding: 10px 20px; border-radius: 20px; font-size: 14px; transition: 0.3s; }
+        .skill-tag:hover { background: rgba(255,105,180,0.2); transform: translateY(-2px); }
+        footer { text-align: center; padding: 25px; color: #333; font-size: 13px; border-top: 1px solid #111; }
+        @media (max-width: 600px) { .hero h1 { font-size: 32px; } .nav-links a { margin-left: 12px; font-size: 14px; } }
+    </style>
 </head>
-
 <body>
-
-<nav>
-    <div class="logo">Nour.dev</div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="project.html">Projects</a>
-        <a href="contact.html">Contact</a>
+    <nav>
+        <div class="logo">Nour.dev</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+[03/04/2026 14:13] Nouuuur: <a href="project.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="hero-badge">✦ WELCOME TO MY PORTFOLIO ✦</div>
+        <h1>Hi, I'm Nour 👋<br>Web Developer</h1>
+        <p>I build beautiful and interactive websites using HTML, CSS, and JavaScript. Let's create something amazing together!</p>
+        <div class="hero-buttons">
+            <a href="project.html" class="btn-primary">🚀 View My Projects</a>
+            <a href="contact.html" class="btn-secondary">📩 Contact Me</a>
+            <a href="todo.html" class="btn-primary">📝 Try To-Do App</a>
+        </div>
     </div>
-</nav>
-
-<section class="hero">
-    <h1>Hi, I'm Nour 👋</h1>
-    <p>Frontend Developer | UI Lover</p>
-
-    <div class="buttons">
-        <a href="project.html" class="primary">🚀 My Projects</a>
-        <a href="contact.html" class="secondary">📩 Contact Me</a>
+    <div class="stats">
+        <div class="stat"><span>3+</span><p>Projects</p></div>
+        <div class="stat"><span>3+</span><p>Technologies</p></div>
+        <div class="stat"><span>100%</span><p>Passion 🩷</p></div>
     </div>
-</section>
-
+    <div class="skills-section">
+        <h2>🛠 My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">HTML5 🌐</div>
+            <div class="skill-tag">CSS3 🎨</div>
+            <div class="skill-tag">JavaScript ⚡️</div>
+            <div class="skill-tag">Responsive Design 📱</div>
+            <div class="skill-tag">UI/UX 🩷</div>
+        </div>
+    </div>
+    <footer>Made with 🩷 by Nour</footer>
 </body>
 </html>
