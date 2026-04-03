@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- مهم ل GitHub Pages -->
 <base href="/my-portfolio/">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact</title>
 
 <style>
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial;
     background:#0a0f1e;
@@ -51,10 +54,7 @@ nav a{
     transition:0.3s;
 }
 .contact-card:hover{
-    transform:translateY(-5px);
-}
-.icon{
-    font-size:30px;
+    transform:translateY(-5px) scale(1.03);
 }
 
 /* FORM */
@@ -87,9 +87,11 @@ nav a{
     border-radius:12px;
     font-weight:bold;
     cursor:pointer;
+    transition:0.3s;
 }
 .send-btn:hover{
     opacity:0.85;
+    transform:scale(1.02);
 }
 
 /* SUCCESS */
@@ -120,20 +122,17 @@ nav a{
 <div class="cards-container">
 
 <a href="mailto:your@email.com" class="contact-card">
-<span class="icon">📧</span>
-<h3>Email</h3>
+<h3>📧 Email</h3>
 <p>your@email.com</p>
 </a>
 
 <a href="https://github.com/yourusername" target="_blank" class="contact-card">
-<span class="icon">🐙</span>
-<h3>GitHub</h3>
+<h3>🐙 GitHub</h3>
 <p>github.com/yourusername</p>
 </a>
 
 <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-card">
-<span class="icon">💼</span>
-<h3>LinkedIn</h3>
+<h3>💼 LinkedIn</h3>
 <p>linkedin.com/in/yourusername</p>
 </a>
 
@@ -142,7 +141,7 @@ nav a{
 <!-- FORM -->
 <div class="form-container">
 
-<form id="contactForm" action="https://formspree.io/f/yourID" method="POST">
+<form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
 <div class="form-group">
 <input type="text" name="name" placeholder="Your Name" required>
@@ -172,17 +171,21 @@ form.addEventListener("submit", async function(e) {
 
     const data = new FormData(form);
 
-    const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { 'Accept': 'application/json' }
-    });
+    try {
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
 
-    if (response.ok) {
-        document.getElementById("successMsg").style.display = "block";
-        form.reset();
-    } else {
-        alert("Error sending message 😢");
+        if (response.ok) {
+            document.getElementById("successMsg").style.display = "block";
+            form.reset();
+        } else {
+            alert("Error sending message 😢");
+        }
+    } catch (error) {
+        alert("Network error 😢");
     }
 });
 </script>
