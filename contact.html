@@ -2,105 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <base href="/my-portfolio/">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact</title>
 
 <style>
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial;
-    background:#0a0f1e;
-    color:white;
-    margin:0;
-}
-
-/* NAV */
-nav{
-    text-align:center;
-    padding:15px;
-    background:#111;
-}
-nav a{
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
-}
-
-/* HERO */
-.hero{
-    text-align:center;
-    padding:40px;
-}
-
-/* CARDS */
-.cards-container{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-.contact-card{
-    background:#111;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    width:200px;
-    transition:0.3s;
-}
-.contact-card:hover{
-    transform:translateY(-5px) scale(1.03);
-}
-
-/* FORM */
-.form-container{
-    max-width:400px;
-    margin:40px auto;
-    background:#111;
-    padding:25px;
-    border-radius:12px;
-}
-.form-group input,
-.form-group textarea{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:none;
-    border-radius:8px;
-}
-.form-group textarea{
-    height:120px;
-    resize:none;
-}
-
-/* BUTTON */
-.send-btn{
-    width:100%;
-    padding:14px;
-    background:linear-gradient(to right,#f0c040,#ffdd70);
-    border:none;
-    border-radius:12px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-}
-.send-btn:hover{
-    opacity:0.85;
-    transform:scale(1.02);
-}
-
-/* SUCCESS */
-.success-msg{
-    display:none;
-    text-align:center;
-    color:#1dd1a1;
-    margin-top:15px;
-}
+html{ scroll-behavior:smooth; }
+body{ font-family:Arial; background:#0a0f1e; color:white; margin:0; }
+nav{ text-align:center; padding:15px; background:#111; }
+nav a{ color:white; margin:0 15px; text-decoration:none; }
+nav a:hover{ color:#ff69b4; }
+.hero{ text-align:center; padding:40px; }
+.cards-container{ display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+.contact-card{ background:#111; padding:20px; border-radius:12px; text-align:center; width:200px; transition:0.3s; color:white; text-decoration:none; display:block; }
+.contact-card:hover{ transform:translateY(-5px) scale(1.03); }
+.form-container{ max-width:400px; margin:40px auto; background:#111; padding:25px; border-radius:12px; }
+.form-group input, .form-group textarea{ width:100%; padding:10px; margin:10px 0; border:none; border-radius:8px; }
+.form-group textarea{ height:120px; resize:none; }
+.send-btn{ width:100%; padding:14px; background:linear-gradient(to right,#ff69b4,#cc0066); border:none; border-radius:12px; font-weight:bold; cursor:pointer; color:white; transition:0.3s; }
+.send-btn:hover{ opacity:0.85; transform:scale(1.02); }
+.success-msg{ display:none; text-align:center; color:#1dd1a1; margin-top:15px; }
 </style>
 </head>
 
@@ -118,66 +39,48 @@ nav a{
 <p>Feel free to reach out!</p>
 </div>
 
-<!-- CONTACT CARDS -->
 <div class="cards-container">
-
 <a href="mailto:your@email.com" class="contact-card">
 <h3>📧 Email</h3>
 <p>your@email.com</p>
 </a>
-
-<a href="https://github.com/yourusername" target="_blank" class="contact-card">
+<a href="https://github.com/NoouurM" target="_blank" class="contact-card">
 <h3>🐙 GitHub</h3>
-<p>github.com/yourusername</p>
+<p>github.com/NoouurM</p>
 </a>
-
 <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-card">
 <h3>💼 LinkedIn</h3>
 <p>linkedin.com/in/yourusername</p>
 </a>
-
 </div>
 
-<!-- FORM -->
 <div class="form-container">
-
-<form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-
+<form id="contactForm" action="https://formspree.io/f/mojpkdve" method="POST">
 <div class="form-group">
 <input type="text" name="name" placeholder="Your Name" required>
 </div>
-
 <div class="form-group">
 <input type="email" name="email" placeholder="Your Email" required>
 </div>
-
 <div class="form-group">
 <textarea name="message" placeholder="Your Message..." required></textarea>
 </div>
-
 <button type="submit" class="send-btn">SEND MESSAGE →</button>
-
 <p class="success-msg" id="successMsg">✅ Message sent successfully!</p>
-
 </form>
-
 </div>
 
 <script>
 const form = document.getElementById("contactForm");
-
 form.addEventListener("submit", async function(e) {
     e.preventDefault();
-
     const data = new FormData(form);
-
     try {
         const response = await fetch(form.action, {
             method: "POST",
             body: data,
             headers: { 'Accept': 'application/json' }
         });
-
         if (response.ok) {
             document.getElementById("successMsg").style.display = "block";
             form.reset();
